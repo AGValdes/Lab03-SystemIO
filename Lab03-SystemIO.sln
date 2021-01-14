@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab03-SystemIO", "Lab03-Sys
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab03tests", "lab03tests\lab03tests.csproj", "{D12AF5C9-D961-410B-B898-0E2573364194}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{231C454E-4525-4C9C-9D72-34986A9DD2F2}"
+	ProjectSection(SolutionItems) = preProject
+		words.txt = words.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
