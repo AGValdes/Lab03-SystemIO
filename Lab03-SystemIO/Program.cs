@@ -8,11 +8,13 @@ namespace Lab03_SystemIO
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine(ProductOfThree(getNums()));
-            //Console.WriteLine("This was your average, " + AverageOfNumbers(getNumbers()));
-            //int[] practiceArray = new int[] { 12, 34, 1 , 76, 3 };
-            //Console.WriteLine(MaxValue(practiceArray));
+            Console.WriteLine(ProductOfThree(getNums()));
+            Console.WriteLine("This was your average, " + AverageOfNumbers(getNumberArray()));
+            int[] practiceArray = new int[] { 12, 34, 1 , 76, 3 };
+            Console.WriteLine(MaxValue(practiceArray));
             WriteToFile();
+            ReadFile();
+
         }
         public static string getNums()
         {
@@ -26,33 +28,37 @@ namespace Lab03_SystemIO
             return Convert.ToDecimal(nums[0]) * Convert.ToDecimal(nums[1]) * Convert.ToDecimal(nums[2]);
         }
 
-        public static string getNumbers()
+        public static decimal[] getNumberArray()
         {
             Console.WriteLine("Please enter a number between 2 and 10");
-            return Console.ReadLine();
-        }
-        public static decimal AverageOfNumbers(string userNum)
-        {
-            // converting parameter to an integer
-            int arrayLength = Convert.ToInt32(userNum);
-            decimal[] averageArray = new decimal[arrayLength];
-            decimal sum = 0;
+            string userInput = Console.ReadLine();
+            int userNum = Convert.ToInt32(userInput);
+            decimal[] averageArray = new decimal[userNum];
             // every time it iterates through, it assigns each index to the value input by the user
             for (int i = 0; i < averageArray.Length; i++)
             {
                 Console.WriteLine("Please enter a random number.");
                 averageArray[i] = Convert.ToDecimal(Console.ReadLine());
             }
-            foreach (decimal num in averageArray)
+            return averageArray;
+        }
+        public static decimal AverageOfNumbers(decimal[] numberArray)
+        {
+          //converting the array lenght to a decimal so i can use the Decimal.Divide method
+            decimal averageDivisor = Convert.ToDecimal(numberArray.Length);
+           
+            decimal sum = 0;
+      
+            foreach (decimal num in numberArray)
             {
                 sum += num;
             }
-            decimal arrayLengthAsDecimal = Convert.ToDecimal(arrayLength);
-            return Decimal.Divide(sum, arrayLengthAsDecimal);
+          
+            return Decimal.Divide(sum, averageDivisor);
         }
         public static int MostDuplicates(int[] arr)
         {
-            //sort 
+            Array.Sort(arr);
             int maxCount = 0, returnValue = 0;
             for (int j = 0; j < arr.Length; j++)
             {
@@ -108,6 +114,14 @@ namespace Lab03_SystemIO
             File.WriteAllText(path, input);
         }
 
+        static void ReadFile()
+        {
+            string path = "../../../words.txt";
+            string message = File.ReadAllText(path);
+            Console.WriteLine(message);
+
+
+        }
 
     }
 }
