@@ -11,8 +11,8 @@
 ## Strategies
 - Challenge 1: ![Challenge1 Whiteboard](./assets/challenge1.png)
 - Challenge 2:
-- Challenge 3:
-- Challenge 4:
-- Challenge 5:
+- Challenge 3:![Challenge1 Whiteboard](./assets/challenge3.png)
+- Challenge 4:![Challenge1 Whiteboard](./assets/challenge4.png)
+- Challenge 5:![Challenge1 Whiteboard](./assets/challenge5.png)
 - Challenge 6:
 - Challenge 7:
