@@ -9,7 +9,7 @@
 - Challenge 6:Write a method that asks the user to input a word, and then saves that word into an external file named words.txt
 - Challenge 7:Write a method that reads the file in from Challenge 6, and outputs the contents to the console.
 ## Strategies
-- Challenge 1:
+- Challenge 1: ![Challenge1 Whiteboard](./assets/challenge1.png)
 - Challenge 2:
 - Challenge 3:
 - Challenge 4:
