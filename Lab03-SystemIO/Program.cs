@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 
 namespace Lab03_SystemIO
@@ -7,8 +8,11 @@ namespace Lab03_SystemIO
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(ProductOfThree(getNums()));
-            Console.WriteLine("This was your average, " + AverageOfNumbers(getNumbers()));
+            //Console.WriteLine(ProductOfThree(getNums()));
+            //Console.WriteLine("This was your average, " + AverageOfNumbers(getNumbers()));
+            //int[] practiceArray = new int[] { 12, 34, 1 , 76, 3 };
+            //Console.WriteLine(MaxValue(practiceArray));
+            WriteToFile();
         }
         public static string getNums()
         {
@@ -46,5 +50,64 @@ namespace Lab03_SystemIO
             decimal arrayLengthAsDecimal = Convert.ToDecimal(arrayLength);
             return Decimal.Divide(sum, arrayLengthAsDecimal);
         }
+        public static int MostDuplicates(int[] arr)
+        {
+            //sort 
+            int maxCount = 0, returnValue = 0;
+            for (int j = 0; j < arr.Length; j++)
+            {
+                int numToCompare = arr[j];
+                int counter = 1;
+                for (int i = j + 1; i < arr.Length; i++)
+                {
+                    if (numToCompare == arr[i])
+                    {
+                        counter++;
+                    }
+                    else
+                    {
+                        if (counter > maxCount)
+                        {
+                            maxCount = counter;
+                            returnValue = numToCompare;
+                            j = i;
+                        }
+                        break;
+                    }
+                }
+            }
+            return returnValue;
+        }
+
+        public static int MaxValue(int[] arr)
+        {
+            int maxValue = 0;
+            for(int i = 0; i < arr.Length; i++)
+            {
+              
+                for(int j = i+1; j < arr.Length; j++)
+                {
+                    if(arr[i] > arr[j])
+                    {
+                        maxValue = arr[i];
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+            return maxValue;
+        }
+
+        static void WriteToFile()
+        {
+            string path = "../../../words.txt";
+            Console.WriteLine("Please enter some text:");
+            string input = Console.ReadLine();
+            File.WriteAllText(path, input);
+        }
+
+
     }
 }
